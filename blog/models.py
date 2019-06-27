@@ -11,6 +11,7 @@ class Post(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
     title = models.TextField()
     cover = models.ImageField(upload_to='images/')
+    thumb = models.ImageField(default="default.png",blank=True)
 
     def publish(self):
         self.published_date = timezone.now()
